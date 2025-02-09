@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <title>Realtime Emotion AI</title>
+</head>
+<body>
+
+      <header class="absolute inset-x-0 top-0 z-50">
+    <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <div class="flex lg:flex-1">
+        <a href="#" class="-m-1.5 p-1.5">
+          <span class="sr-only">Your Company</span>
+          <img class="h-8 w-auto" src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="">
+        </a>
+      </div>
+      <div class="flex lg:hidden">
+        <button type="button" id="open-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+          <span class="sr-only">Open main menu</span>
+          <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">Projects</a>
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">About</a>
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">Ideas Page</a>
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">Github</a>
+      </div>
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </nav>
+    <!-- Mobile menu, show/hide based on menu open state. -->
+    <div class="lg:hidden" role="dialog"  id="mobile-menu" aria-modal="true">
+      <!-- Background backdrop, show/hide based on slide-over state. -->
+      <div class="fixed inset-0 z-50"></div>
+      <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div class="flex items-center justify-between">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">Your Company</span>
+            <img class="h-8 w-auto" src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="">
+          </a>
+          <button type="button" id="close-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+            <span class="sr-only">Close menu</span>
+            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="mt-6 flow-root">
+          <div class="-my-6 divide-y divide-gray-500/10">
+            <div class="space-y-2 py-6">
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Projects</a>
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">About</a>
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Ideas</a>
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Github</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+<div class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+  <div class="absolute inset-0 -z-10 overflow-hidden">
+    <svg class="absolute top-0 left-[max(50%,25rem)] h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]" aria-hidden="true">
+      <defs>
+        <pattern id="e813992c-7d03-4cc4-a2bd-151760b470a0" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
+          <path d="M100 200V.5M.5 .5H200" fill="none" />
+        </pattern>
+      </defs>
+      <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
+        <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z" stroke-width="0" />
+      </svg>
+      <rect width="100%" height="100%" stroke-width="0" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
+    </svg>
+  </div>
+  <div class="mx-auto max-w-2xl gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:items-start lg:gap-y-10">
+    <!-- Header / Introduction Section -->
+    <div class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:w-full lg:max-w-7xl lg:gap-x-8 lg:px-8">
+      <div class="lg:pr-4">
+        <div>
+          <p class="text-base/7 font-semibold text-indigo-600">
+            Real-Time Emotion Detection and Mental Health Support System
+          </p>
+          <h1 class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
+            Real-Time Emotion Recognition for Personalized Mental Health Support
+          </h1>
+          <p class="mt-6 text-xl/8 text-gray-700">
+            Our system integrates facial expression analysis, eye blink monitoring, and breathing pattern detection to continuously assess users' emotional states. By processing real-time data through an ensemble model, it delivers tailored interventions via an AI-powered chatbot.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Detailed Content Section -->
+    <div class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:w-full lg:max-w-7xl lg:gap-x-8 lg:px-8">
+      <div class="lg:pr-4">
+        <div class="text-base/7 text-gray-700">
+            <br>
+          <p>
+            <strong>Key Features:</strong> Our solution combines multiple inputs and cutting‐edge algorithms to provide effective mental health support:
+          </p>
+          <ul role="list" class="mt-8 space-y-8 text-gray-600">
+            <!-- Multi-Modal Emotion Recognition -->
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <!-- Face Icon -->
+                <circle cx="10" cy="10" r="8" />
+                <circle cx="7" cy="8" r="1" fill="white"/>
+                <circle cx="13" cy="8" r="1" fill="white"/>
+                <path d="M7 12c1.5 1 3.5 1 5 0" stroke="white" stroke-width="1" fill="none" stroke-linecap="round"/>
+              </svg>
+              <span>
+                <strong class="font-semibold text-gray-900">Multi-Modal Emotion Recognition.</strong>
+                Utilizes facial expression analysis, eye blink rate monitoring, and breathing pattern detection to assess emotional states.
+              </span>
+            </li>
+            <!-- Ensemble Data Fusion -->
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <!-- Venn Diagram Icon -->
+                <circle cx="10" cy="6" r="2" fill="currentColor" fill-opacity="0.7"/>
+                <circle cx="6" cy="12" r="2" fill="currentColor" fill-opacity="0.7"/>
+                <circle cx="14" cy="12" r="2" fill="currentColor" fill-opacity="0.7"/>
+              </svg>
+              <span>
+                <strong class="font-semibold text-gray-900">Ensemble Data Fusion.</strong>
+                Combines insights from multiple inputs using advanced ensemble models for accurate emotion prediction.
+              </span>
+            </li>
+            <!-- Real-Time Processing -->
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <!-- Clock Icon -->
+                <circle cx="10" cy="10" r="8"/>
+                <path d="M10 10V6" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M10 10l3 2" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              <span>
+                <strong class="font-semibold text-gray-900">Real-Time Processing.</strong>
+                Continuously analyzes camera input to provide near-instantaneous emotional insights.
+              </span>
+            </li>
+            <!-- AI-Powered Chatbot Support -->
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <!-- Chat Bubble Icon -->
+                <path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H6l-4 4V5z"/>
+              </svg>
+              <span>
+                <strong class="font-semibold text-gray-900">AI-Powered Chatbot Support.</strong>
+                Engages users with personalized mental health advice, relaxation techniques, and resource recommendations based on their emotional state.
+              </span>
+            </li>
+            <!-- Adaptive Feedback Loop -->
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <!-- Circular Arrow Icon -->
+                <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm3.536 9.536a1 1 0 00-1.414-1.414L10 12.243V7a1 1 0 10-2 0v5.243l-2.122-2.121a1 1 0 00-1.414 1.414l3.536 3.536a1 1 0 001.414 0l3.536-3.536z"/>
+              </svg>
+              <span>
+                <strong class="font-semibold text-gray-900">Adaptive Feedback Loop.</strong>
+                Continuously learns from user feedback to improve emotion detection accuracy and refine chatbot responses.
+              </span>
+            </li>
+            <!-- Comprehensive Visualization -->
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <!-- Bar Chart Icon -->
+                <rect x="3" y="10" width="3" height="7" rx="1"/>
+                <rect x="8" y="6" width="3" height="11" rx="1"/>
+                <rect x="13" y="8" width="3" height="9" rx="1"/>
+              </svg>
+              <span>
+                <strong class="font-semibold text-gray-900">Comprehensive Visualization.</strong>
+                Offers dashboards and trend reports to help users track their emotional patterns over time.
+              </span>
+            </li>
+          </ul>
+          <p class="mt-8">
+            <strong>Technologies & Challenges:</strong> Our solution leverages computer vision libraries like OpenCV and Dlib, pre-trained deep learning models (FER-2013, AffectNet), transformer-based NLP models (such as GPT and Hugging Face), and Scikit-learn for ensemble modeling. Key challenges include ensuring real-time performance, safeguarding sensitive emotional data, and adapting to individual variances in non-verbal cues.
+          </p>
+          <h2 class="mt-16 text-2xl font-bold tracking-tight text-gray-900">Future Enhancements</h2>
+          <p class="mt-6">
+            Plans include integrating wearable devices for more precise physiological monitoring, expanding the chatbot with voice interaction capabilities, and partnering with mental health professionals for a comprehensive support system. This innovative approach aims to create a positive social impact by enabling early intervention and personalized care.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+</body>
+</html>

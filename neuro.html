@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <title>Neurowellness AI</title>
+</head>
+
+<body>
+          <header class="absolute inset-x-0 top-0 z-50">
+    <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <div class="flex lg:flex-1">
+        <a href="#" class="-m-1.5 p-1.5">
+          <span class="sr-only">Your Company</span>
+          <img class="h-8 w-auto" src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="">
+        </a>
+      </div>
+      <div class="flex lg:hidden">
+        <button type="button" id="open-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+          <span class="sr-only">Open main menu</span>
+          <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">Projects</a>
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">About</a>
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">Ideas Page</a>
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">Github</a>
+      </div>
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </nav>
+    <!-- Mobile menu, show/hide based on menu open state. -->
+    <div class="lg:hidden" role="dialog"  id="mobile-menu" aria-modal="true">
+      <!-- Background backdrop, show/hide based on slide-over state. -->
+      <div class="fixed inset-0 z-50"></div>
+      <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div class="flex items-center justify-between">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">Your Company</span>
+            <img class="h-8 w-auto" src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="">
+          </a>
+          <button type="button" id="close-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+            <span class="sr-only">Close menu</span>
+            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="mt-6 flow-root">
+          <div class="-my-6 divide-y divide-gray-500/10">
+            <div class="space-y-2 py-6">
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Projects</a>
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">About</a>
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Ideas</a>
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Github</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+<div class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+  <div class="absolute inset-0 -z-10 overflow-hidden">
+    <svg class="absolute top-0 left-[max(50%,25rem)] h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]" aria-hidden="true">
+      <defs>
+        <pattern id="e813992c-7d03-4cc4-a2bd-151760b470a0" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
+          <path d="M100 200V.5M.5 .5H200" fill="none" />
+        </pattern>
+      </defs>
+      <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
+        <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z" stroke-width="0" />
+      </svg>
+      <rect width="100%" height="100%" stroke-width="0" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
+    </svg>
+  </div>
+  <div class="mx-auto max-w-2xl gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:items-start lg:gap-y-10">
+    <!-- Header / Introduction Section -->
+    <div class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:w-full lg:max-w-7xl lg:gap-x-8 lg:px-8">
+      <div class="lg:pr-4">
+        <div>
+          <p class="text-base/7 font-semibold text-indigo-600">
+            NeuroWellness AI: Revolutionizing Mental and Physical Healthcare through AI and Blockchain
+          </p>
+          <h1 class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
+            A Comprehensive AI-Powered Healthcare Platform
+          </h1>
+          <p class="mt-6 text-xl/8 text-gray-700">
+            The goal of this project is to build an AI-powered platform that integrates mental health and medical diagnostics, providing personalized support and real-time health monitoring. Utilizing advanced AI technologies—including LLMs for empathetic mental health support, emotion recognition via facial expressions, voice, and physiological signals—and a privacy-preserving blockchain framework for secure data storage, NeuroWellness AI bridges the gap between virtual and physical healthcare while ensuring compliance with HIPAA and GDPR.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Detailed Content Section -->
+    <div class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:w-full lg:max-w-7xl lg:gap-x-8 lg:px-8">
+      <div class="lg:pr-4">
+        <div class="text-base/7 text-gray-700">
+          <!-- Description Section -->
+          <p>
+            <strong>Description:</strong> NeuroWellness AI is an innovative platform that combines AI-driven diagnostics, real-time emotion tracking, and secure data storage using blockchain to revolutionize mental and physical healthcare. The platform features several key components:
+          </p>
+          <ul role="list" class="mt-8 space-y-8 text-gray-600">
+            <!-- AI Psychiatrist -->
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <!-- Chat Bubble with Heart Icon -->
+                <path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v7a2 2 0 01-2 2H7l-4 4V5z"/>
+                <path d="M10 11.5l2-2 1 1-3 3-3-3 1-1 2 2z" fill="white"/>
+              </svg>
+              <span>
+                <strong>AI Psychiatrist:</strong> An AI-powered mental health assistant that uses multiple LLMs to provide personalized, empathetic responses to users' concerns.
+              </span>
+            </li>
+            <!-- Emotion Monitoring -->
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <!-- Smiley Face Icon -->
+                <circle cx="10" cy="10" r="8"/>
+                <circle cx="7" cy="8" r="1" fill="white"/>
+                <circle cx="13" cy="8" r="1" fill="white"/>
+                <path d="M7 12c1.5 1 3.5 1 5 0" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              </svg>
+              <span>
+                <strong>Emotion Monitoring:</strong> Real-time tracking through facial expressions, voice recognition, eye movements, and breathing patterns.
+              </span>
+            </li>
+            <!-- AI Diagnosis -->
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <!-- Stethoscope Icon -->
+                <path d="M6 2a1 1 0 00-1 1v2a1 1 0 001 1h1v5a3 3 0 106 0V6h1a1 1 0 001-1V3a1 1 0 00-1-1H6z" fill="currentColor"/>
+                <circle cx="10" cy="14" r="2" fill="white"/>
+              </svg>
+              <span>
+                <strong>AI Diagnosis:</strong> A virtual medical assistant offering instant advice, prescriptions, and emergency support.
+              </span>
+            </li>
+            <!-- VHelp System -->
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-6 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <!-- Helping Hands Icon -->
+                <path d="M4 10l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 6l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>
+                <strong>VHelp:</strong> Connects users to nearby mental health professionals for therapy and follow-up care.
+              </span>
+            </li>
+            <!-- Smartwatch Integration -->
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <!-- Watch Icon -->
+                <rect x="6" y="4" width="8" height="12" rx="2" ry="2"/>
+                <path d="M8 2h4M8 18h4" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              <span>
+                <strong>Smartwatch Integration:</strong> Real-time monitoring of vital health metrics with alerts for concerning changes.
+              </span>
+            </li>
+            <!-- Health Tokens System -->
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <!-- Coin Icon -->
+                <circle cx="10" cy="10" r="8" />
+                <text x="10" y="14" text-anchor="middle" font-size="10" fill="white" font-family="sans-serif">₮</text>
+              </svg>
+              <span>
+                <strong>Health Tokens System:</strong> Rewards users for community support, redeemable for medical purchases and therapy sessions.
+              </span>
+            </li>
+          </ul>
+          <!-- Complexity Section -->
+          <p class="mt-8">
+            <strong>Complexity:</strong> This project involves integrating advanced technologies, such as:
+          </p>
+          <ul role="list" class="mt-4 space-y-4 text-gray-600">
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="oklch(0.511 0.262 276.966)" aria-hidden="true">
+                <!-- Brain Icon -->
+                <path d="M10 2a4 4 0 00-4 4v1H5a2 2 0 00-2 2v1h14v-1a2 2 0 00-2-2h-1V6a4 4 0 00-4-4z" stroke="oklch(0.511 0.262 276.966)" fill="oklch(0.511 0.262 276.966)"/>
+                <path d="M4 13v2a2 2 0 002 2h1v-3H4zM13 13v3h1a2 2 0 002-2v-2h-3z" stroke="oklch(0.511 0.262 276.966)" fill="oklch(0.511 0.262 276.966)"/>
+              </svg>
+              <span>
+                <strong>AI and LLMs:</strong> Developing a highly empathetic AI Psychiatrist that accurately responds to users’ needs.
+              </span>
+            </li>
+            <li class="flex gap-x-3">
+<svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <!-- Face Icon -->
+                <circle cx="10" cy="10" r="8" />
+                <circle cx="7" cy="8" r="1" fill="white"/>
+                <circle cx="13" cy="8" r="1" fill="white"/>
+                <path d="M7 12c1.5 1 3.5 1 5 0" stroke="white" stroke-width="1" fill="none" stroke-linecap="round"/>
+              </svg>
+              <span>
+                <strong>Emotion Recognition:</strong> Building real-time detection systems using voice, facial expressions, and physiological signals.
+              </span>
+            </li>
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <!-- Coin Icon -->
+                <circle cx="10" cy="10" r="8" />
+                <text x="10" y="14" text-anchor="middle" font-size="10" fill="white" font-family="sans-serif">₮</text></svg>
+              <span>
+                <strong>Blockchain:</strong> Securing user data via a decentralized system that meets privacy regulations.
+              </span>
+            </li>
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <!-- Data Integration Icon -->
+                <path d="M4 4h12v12H4z" fill="none" stroke="oklch(0.511 0.262 276.966)" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M4 10h12" stroke="oklch(0.511 0.262 276.966)" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M10 4v12" stroke="oklch(0.511 0.262 276.966)" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              <span>
+                <strong>Real-Time Data Integration:</strong> Combining data from wearables, voice, video, etc., for accurate health insights.
+              </span>
+            </li>
+          </ul>
+          <p class="mt-4">
+            Key challenges include ensuring real-time processing with minimal latency, maintaining strict privacy and security standards, and designing a scalable system for high user volumes.
+          </p>
+          <!-- Impact Section -->
+          <p class="mt-8">
+            <strong>Impact:</strong> NeuroWellness AI will transform healthcare by delivering:
+          </p>
+          <ul role="list" class="mt-4 space-y-4 text-gray-600">
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="oklch(0.511 0.262 276.966)" aria-hidden="true">
+                <!-- Heart Icon -->
+                <path d="M10 18l-1.45-1.32C4.4 12.36 2 9.28 2 6.5 2 4.42 3.42 3 5.5 3 7.24 3 8.91 3.81 10 5.09 11.09 3.81 12.76 3 14.5 3 16.58 3 18 4.42 18 6.5c0 2.78-2.4 5.86-6.55 10.18L10 18z" fill="oklch(0.511 0.262 276.966)"/>
+              </svg>
+              <span>
+                <strong>Personalized, Real-Time Support:</strong> Instant, tailored mental health and medical advice bridging virtual and physical care.
+              </span>
+            </li>
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="oklch(0.511 0.262 276.966)" aria-hidden="true">
+                <!-- Shield Icon -->
+                <path d="M10 2l6 2v4c0 5-3 7-6 9-3-2-6-4-6-9V4l6-2z" fill="oklch(0.511 0.262 276.966)"/>
+              </svg>
+              <span>
+                <strong>Privacy-First:</strong> Blockchain-backed security ensures user data privacy and builds trust.
+              </span>
+            </li>
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="oklch(0.511 0.262 276.966)" aria-hidden="true">
+                <!-- Users/Community Icon -->
+                <path d="M7 10a3 3 0 100-6 3 3 0 000 6zM3 18a4 4 0 014-4h2a4 4 0 014 4" stroke="oklch(0.511 0.262 276.966)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>
+                <strong>Community-Driven Health Ecosystem:</strong> A health token system that rewards community support.
+              </span>
+            </li>
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <!-- Globe Icon -->
+                <circle cx="10" cy="10" r="8" stroke="oklch(0.511 0.262 276.966)" stroke-width="1.5" fill="oklch(0.511 0.262 276.966)"/>
+                <path d="M2 10h16" stroke="oklch(0.511 0.262 276.966)" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M10 2a12 12 0 010 16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              <span>
+                <strong>Global Accessibility:</strong> Extends high-quality healthcare to remote and underserved areas.
+              </span>
+            </li>
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="oklch(0.511 0.262 276.966)" aria-hidden="true">
+                <!-- Upward Trending Chart Icon -->
+                <polyline points="3 17 9 11 13 15 17 9" fill="none" stroke="oklch(0.511 0.262 276.966)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="3 7 3 17 17 17" fill="none" stroke="oklch(0.511 0.262 276.966)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>
+                <strong>Improved Health Outcomes:</strong> Timely interventions and continuous monitoring enhance emergency and long-term care.
+              </span>
+            </li>
+          </ul>
+          <!-- Deliverables Section -->
+          <p class="mt-8"><strong>Deliverables:</strong></p>
+          <ol class="mt-4 list-decimal list-inside space-y-4 text-gray-600">
+            <li>
+              <strong>AI Psychiatrist and Emotion Monitoring System:</strong>
+              <ul class="mt-2 list-disc ml-5 space-y-1">
+                <li>A fully functional AI-powered mental health assistant using LLMs.</li>
+                <li>Emotion monitoring integrating facial expressions, voice recognition, eye movements, and breathing patterns.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>AI Diagnosis System:</strong>
+              <ul class="mt-2 list-disc ml-5 space-y-1">
+                <li>A virtual doctor system offering instant medical advice and prescriptions.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Smartwatch Integration:</strong>
+              <ul class="mt-2 list-disc ml-5 space-y-1">
+                <li>Integration with health wearables to monitor vital signs like heart rate, stress levels, and sleep patterns.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>VHelp System:</strong>
+              <ul class="mt-2 list-disc ml-5 space-y-1">
+                <li>A platform connecting users with local mental health professionals for therapy and follow-up care.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Blockchain-Backed Data Privacy System:</strong>
+              <ul class="mt-2 list-disc ml-5 space-y-1">
+                <li>Secure storage of sensitive data using blockchain, ensuring data integrity and regulatory compliance.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Health Tokens System:</strong>
+              <ul class="mt-2 list-disc ml-5 space-y-1">
+                <li>A reward system for community participation, with tokens redeemable for medical benefits.</li>
+              </ul>
+            </li>
+          </ol>
+          <!-- Technologies Used -->
+          <p class="mt-8">
+            <strong>Technologies Used:</strong> LLMs (GPT, Hugging Face, Rasa), Emotion Recognition tools (OpenCV, Dlib, TensorFlow), Blockchain frameworks (Ethereum or Hyperledger), Wearables Integration APIs (e.g., Fitbit, Apple Watch), Data Processing tools (Apache Kafka, Pandas), and Cloud Platforms (AWS, Google Cloud, or Azure).
+          </p>
+          <!-- Challenges Section -->
+          <p class="mt-8"><strong>Challenges:</strong></p>
+          <ul role="list" class="mt-4 space-y-4 text-gray-600">
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="oklch(0.511 0.262 276.966)" aria-hidden="true">
+                <!-- Clock Icon for Real-Time Processing -->
+                <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 8H9v4h2V10z" fill="oklch(0.511 0.262 276.966)"/>
+              </svg>
+              <span>
+                <strong>Real-Time Data Processing:</strong> Ensuring minimal delay in processing emotion and health data for timely feedback.
+              </span>
+            </li>
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <!-- Shield Icon for Data Privacy -->
+                <path d="M10 2l6 2v4c0 5-3 7-6 9-3-2-6-4-6-9V4l6-2z" fill="oklch(0.511 0.262 276.966)"/>
+              </svg>
+              <span>
+                <strong>Data Privacy and Security:</strong> Safeguarding sensitive healthcare information while ensuring compliance with privacy regulations.
+              </span>
+            </li>
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <!-- Bar Chart Icon for Scalability -->
+                <rect x="3" y="10" width="3" height="7" rx="1" fill="oklch(0.511 0.262 276.966)"/>
+                <rect x="8" y="6" width="3" height="11" rx="1" fill="oklch(0.511 0.262 276.966)"/>
+                <rect x="13" y="8" width="3" height="9" rx="1" fill="oklch(0.511 0.262 276.966)"/>
+              </svg>
+              <span>
+                <strong>Scalability:</strong> Designing a system that scales to handle a large number of users without performance issues.
+              </span>
+            </li>
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <!-- Integration Icon for Multimodal Integration -->
+                <path d="M4 4h12v12H4V4z" fill="none" stroke="oklch(0.511 0.262 276.966)" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M4 10h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M10 4v12" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              <span>
+                <strong>Multimodal Integration:</strong> Effectively integrating data from voice, facial expressions, and vitals into a cohesive, reliable model.
+              </span>
+            </li>
+          </ul>
+          <!-- Future Enhancements Section -->
+          <h2 class="mt-16 text-2xl font-bold tracking-tight text-gray-900">Future Enhancements</h2>
+          <p class="mt-6">
+            Planned enhancements include expanding the AI Psychiatrist’s capabilities with voice-based interactions, incorporating advanced analytics for predictive mental health conditions, and enhancing community features for peer support and collaboration.
+          </p>
+          <p class="mt-6">
+            This proposal encapsulates the concept and plan for NeuroWellness AI, outlining its innovative approach, complexity, deliverables, and long-term impact on healthcare.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

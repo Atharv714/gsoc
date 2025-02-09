@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <title>AI Diagnosis</title>
+</head>
+<body>
+
+      <header class="absolute inset-x-0 top-0 z-50">
+    <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <div class="flex lg:flex-1">
+        <a href="#" class="-m-1.5 p-1.5">
+          <span class="sr-only">Your Company</span>
+          <img class="h-8 w-auto" src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="">
+        </a>
+      </div>
+      <div class="flex lg:hidden">
+        <button type="button" id="open-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+          <span class="sr-only">Open main menu</span>
+          <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">Projects</a>
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">About</a>
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">Ideas Page</a>
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">Github</a>
+      </div>
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </nav>
+    <!-- Mobile menu, show/hide based on menu open state. -->
+    <div class="lg:hidden" role="dialog"  id="mobile-menu" aria-modal="true">
+      <!-- Background backdrop, show/hide based on slide-over state. -->
+      <div class="fixed inset-0 z-50"></div>
+      <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div class="flex items-center justify-between">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">Your Company</span>
+            <img class="h-8 w-auto" src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="">
+          </a>
+          <button type="button" id="close-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+            <span class="sr-only">Close menu</span>
+            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="mt-6 flow-root">
+          <div class="-my-6 divide-y divide-gray-500/10">
+            <div class="space-y-2 py-6">
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Projects</a>
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">About</a>
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Ideas</a>
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Github</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+<div class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+  <div class="absolute inset-0 -z-10 overflow-hidden">
+    <svg class="absolute top-0 left-[max(50%,25rem)] h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]" aria-hidden="true">
+      <defs>
+        <pattern id="e813992c-7d03-4cc4-a2bd-151760b470a0" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
+          <path d="M100 200V.5M.5 .5H200" fill="none" />
+        </pattern>
+      </defs>
+      <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
+        <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z" stroke-width="0" />
+      </svg>
+      <rect width="100%" height="100%" stroke-width="0" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
+    </svg>
+  </div>
+  <div class="mx-auto max-w-2xl gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:items-start lg:gap-y-10">
+    <!-- Header / Introduction Section -->
+    <div class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:w-full lg:max-w-7xl lg:gap-x-8 lg:px-8">
+      <div class="lg:pr-4">
+        <div>
+          <p class="text-base/7 font-semibold text-indigo-600">
+            Building an AI Model for Real-Time Disease Outbreak Prediction
+          </p>
+          <h1 class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
+            Harnessing Social Media & Health Data for Outbreak Forecasting
+          </h1>
+          <p class="mt-6 text-xl/8 text-gray-700">
+            Develop an AI-powered system that leverages social media signals, news articles, and health data to predict disease outbreaks in real-time. By integrating NLP, time-series analysis, and data fusion, this tool empowers public health officials to respond proactively and effectively.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Detailed Content Section -->
+    <div class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:w-full lg:max-w-7xl lg:gap-x-8 lg:px-8">
+      <div class="lg:pr-4">
+        <div class="text-base/7 text-gray-700">
+          <p>
+            <strong>Key Features:</strong> This solution integrates multiple data sources and advanced analytics to provide early warnings for disease outbreaks:
+          </p>
+          <ul role="list" class="mt-8 space-y-8 text-gray-600">
+            <!-- Multi-Source Data Integration -->
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <!-- Network Nodes Icon -->
+                <circle cx="5" cy="5" r="2" />
+                <circle cx="15" cy="5" r="2" />
+                <circle cx="10" cy="15" r="2" />
+                <line x1="5" y1="5" x2="10" y2="15" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="15" y1="5" x2="10" y2="15" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              <span>
+                <strong class="font-semibold text-gray-900">Multi-Source Data Integration.</strong>
+                Aggregates real-time data from social media, news, and health databases to capture early signals of outbreaks.
+              </span>
+            </li>
+            <!-- NLP & Time-Series Analysis -->
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <!-- Document with Graph Icon -->
+                <rect x="3" y="3" width="14" height="14" rx="2"/>
+                <path d="M6 10h2l2-2 2 2h2" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <path d="M6 13h6" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              <span>
+                <strong class="font-semibold text-gray-900">NLP & Time-Series Analysis.</strong>
+                Utilizes sentiment analysis, topic modeling, and forecasting to detect and predict outbreak trends.
+              </span>
+            </li>
+            <!-- Real-Time Processing -->
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="oklch(0.511 0.262 276.966)" stroke="currentColor" aria-hidden="true">
+                <!-- Lightning Bolt Icon -->
+                <path d="M11 2L6 10h5l-1 8 6-10h-5l1-8z" stroke="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>
+                <strong class="font-semibold text-gray-900">Real-Time Processing.</strong>
+                Analyzes vast streams of unstructured and structured data instantly, ensuring timely outbreak predictions.
+              </span>
+            </li>
+            <!-- Interactive Dashboard -->
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <!-- Monitor with Chart Icon -->
+                <rect x="2" y="4" width="16" height="10" rx="2"/>
+                <path d="M4 9h4v3H4zM10 7h4v5h-4z" fill="white"/>
+              </svg>
+              <span>
+                <strong class="font-semibold text-gray-900">Interactive Dashboard.</strong>
+                Provides public health officials with heatmaps, trend graphs, and alerts for effective decision-making.
+              </span>
+            </li>
+            <!-- Model Interpretability -->
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true">
+                <!-- Eye / Magnifying Glass Icon -->
+                <path d="M10 4a6 6 0 016 6 6 6 0 01-6 6 6 6 0 01-6-6 6 6 0 016-6z" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="10" cy="10" r="2" fill="white"/>
+              </svg>
+              <span>
+                <strong class="font-semibold text-gray-900">Model Interpretability.</strong>
+                Features tools to explain predictions, enhancing transparency and trust for health officials.
+              </span>
+            </li>
+            <!-- Scalable & Reliable -->
+            <li class="flex gap-x-3">
+              <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="oklch(0.511 0.262 276.966)" aria-hidden="true">
+                <!-- Upward Arrow / Bar Graph Icon -->
+                <rect x="4" y="12" width="3" height="5" rx="1"/>
+                <rect x="9" y="8" width="3" height="9" rx="1"/>
+                <rect x="14" y="10" width="3" height="7" rx="1"/>
+              </svg>
+              <span>
+                <strong class="font-semibold text-gray-900">Scalable & Reliable.</strong>
+                Designed to handle high data volumes with minimal latency, ensuring consistent performance.
+              </span>
+            </li>
+          </ul>
+          <p class="mt-8">
+            <strong>Technologies & Challenges:</strong> Leveraging frameworks like TensorFlow, PyTorch, and NLP libraries (spaCy, NLTK, BERT) alongside time-series tools (Prophet, ARIMA, LSTM), the model tackles challenges in data quality, real-time processing, multilingual support, and scalability.
+          </p>
+          <h2 class="mt-16 text-2xl font-bold tracking-tight text-gray-900">Future Enhancements</h2>
+          <p class="mt-6">
+            Upcoming developments include predictive alerts for health authorities, regional breakdowns with detailed mapping, integration with hospital and emergency systems, and advanced sentiment analysis for deeper insights into public behavior during health crises.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
