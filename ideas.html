@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-
-    <title>AI Diagnosis</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <title>AI Diagnosis</title>
 </head>
 <body>
-
-      <header class="absolute inset-x-0 top-0 z-50">
+  <header class="absolute inset-x-0 top-0 z-50">
     <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
       <div class="flex lg:flex-1">
         <a href="index.html" class="-m-1.5 p-1.5">
@@ -20,7 +18,7 @@
       <div class="flex lg:hidden">
         <button type="button" id="open-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
           <span class="sr-only">Open main menu</span>
-          <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+          <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
         </button>
@@ -35,9 +33,8 @@
         <a href="#" class="text-sm/6 font-semibold text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
       </div>
     </nav>
-    <!-- Mobile menu, show/hide based on menu open state. -->
-    <div class="lg:hidden" role="dialog"  id="mobile-menu" aria-modal="true">
-      <!-- Background backdrop, show/hide based on slide-over state. -->
+    <!-- Mobile menu -->
+    <div class="lg:hidden" role="dialog" id="mobile-menu" aria-modal="true">
       <div class="fixed inset-0 z-50"></div>
       <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
         <div class="flex items-center justify-between">
@@ -47,7 +44,7 @@
           </a>
           <button type="button" id="close-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
             <span class="sr-only">Close menu</span>
-            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
             </svg>
           </button>
@@ -66,106 +63,263 @@
     </div>
   </header>
 
-<div class="bg-white py-32">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div class="mx-auto max-w-2xl lg:mx-0">
-      <h2 class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">All Ideas</h2>
-    </div>
+  <div class="bg-white py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl lg:mx-0">
+        <h2 class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">All Ideas</h2>
+      </div>
 
-    <section class="text-gray-600 body-font">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-wrap -m-4">
-      <!-- Card 1: Real-Time Emotion Detection -->
-      <div class="p-4 md:w-1/3">
-        <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-          <img class="lg:h-48 md:h-36 w-full object-cover object-center" 
-               src="https://plus.unsplash.com/premium_photo-1681426687411-21986b0626a8?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGVjaHxlbnwwfHwwfHx8MA%3D%3D" 
-               alt="Real-Time Emotion Detection">
-          <div class="p-6">
-            <!-- Tech Tags -->
-            <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-              OpenCV | TensorFlow | Hugging Face
-            </h2>
-            <!-- Title -->
-            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
-              Real-Time Emotion Detection
-            </h1>
-            <!-- Description -->
-            <p class="leading-relaxed mb-3">
-              AI-driven mental health support using facial recognition, biometrics, and NLP.
-            </p>
-            <!-- Learn More Button -->
-            <a href="emotion.html" class="inline-flex items-center text-[#5046E5] hover:underline">
-              Learn More
-              <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" 
-                   fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="M12 5l7 7-7 7"></path>
-              </svg>
-            </a>
+      <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-wrap -m-4">
+            <!-- Card 1: Real-Time Emotion Detection -->
+            <div class="p-4 md:w-1/3">
+              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <img class="lg:h-48 md:h-36 w-full object-cover object-center" 
+                     src="https://plus.unsplash.com/premium_photo-1681426687411-21986b0626a8?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3" 
+                     alt="Real-Time Emotion Detection">
+                <div class="p-6">
+                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                    OpenCV | TensorFlow | Hugging Face
+                  </h2>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+                    Real-Time Emotion Detection
+                  </h1>
+                  <p class="leading-relaxed mb-3">
+                    Develop an open-source real-time emotion detection module that integrates with video conferencing tools to analyze facial expressions and provide real-time sentiment analysis.
+                  </p>
+                  <a href="emotion.html" class="inline-flex items-center text-[#5046E5] hover:underline">
+                    Learn More
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" 
+                         fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Card 2: Disease Outbreak Prediction -->
+            <div class="p-4 md:w-1/3">
+              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <img class="lg:h-48 md:h-36 w-full object-cover object-center" 
+                     src="https://plus.unsplash.com/premium_photo-1682310231531-148748e7684f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3" 
+                     alt="Disease Outbreak Prediction">
+                <div class="p-6">
+                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                    PyTorch | BERT | Tableau
+                  </h2>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+                    Disease Outbreak Prediction
+                  </h1>
+                  <p class="leading-relaxed mb-3">
+                    Develop an open-source framework for analyzing Twitter/social media data to detect early signs of disease outbreaks using NLP models.
+                  </p>
+                  <a href="aidiagnosis.html" class="inline-flex items-center text-[#5046E5] hover:underline">
+                    Learn More
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" 
+                         fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Card 3: Neurowellness AI -->
+            <div class="p-4 md:w-1/3">
+              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <img class="lg:h-48 md:h-36 w-full object-cover object-center" 
+                     src="https://images.unsplash.com/photo-1617791160536-598cf32026fb?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3" 
+                     alt="Neurowellness AI">
+                <div class="p-6">
+                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                    PyTorch | BERT | Tableau
+                  </h2>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+                    Neurowellness AI
+                  </h1>
+                  <p class="leading-relaxed mb-3">
+                   Develop an NLP-based open-source mental health chatbot that provides basic stress assessment using pre-trained sentiment analysis models
+                  </p>
+                  <a href="neuro.html" class="inline-flex items-center text-[#5046E5] hover:underline">
+                    Learn More
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" 
+                         fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Card 4: Sleep Pattern Analyzer -->
+            <div class="p-4 md:w-1/3">
+              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <img class="lg:h-48 md:h-36 w-full object-cover object-center" 
+                     src="https://welltory.com/wp-content/uploads/2022/09/Cycles_of_Sleep.png" 
+                     alt="Sleep Pattern Analyzer">
+                <div class="p-6">
+                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                    Keras | OpenCV | Scikit-Learn
+                  </h2>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+                    Sleep Pattern Analyzer
+                  </h1>
+                  <p class="leading-relaxed mb-3">
+                    Develop an open-source Python library that extracts sleep movement patterns from video data to classify sleep quality
+                  </p>
+                  <a href="sleep.html" class="inline-flex items-center text-[#5046E5] hover:underline">
+                    Learn More
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" 
+                         fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Card 5: Diet and Nutrition Optimizer -->
+            <div class="p-4 md:w-1/3">
+              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <img class="lg:h-48 md:h-36 w-full object-cover object-center" 
+                     src="https://www.annetill.com/wp-content/uploads/2023/10/Colorful-food-and-cutlery-arranged-in-the-form-of-a-clock-on-a-plate.-Olive-in-hand.-Intermittent-fasting-diet-weight-loss-lunch-time-concept.-1322122040_6240x4160-1024x683.jpeg" 
+                     alt="Diet and Nutrition Optimizer">
+                <div class="p-6">
+                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                    TensorFlow | Flask | Plotly
+                  </h2>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+                    Diet and Nutrition Optimizer
+                  </h1>
+                  <p class="leading-relaxed mb-3">
+                    Develop an open-source AI-powered food recognition API that estimates calories from meal images using CNNs.
+                  </p>
+                  <a href="nutrition.html" class="inline-flex items-center text-[#5046E5] hover:underline">
+                    Learn More
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" 
+                         fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Card 6: Chronic Disease Management System -->
+            <div class="p-4 md:w-1/3">
+              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <img class="lg:h-48 md:h-36 w-full object-cover object-center" 
+                     src="https://nutrition.org/wp-content/uploads/2022/08/CHRONIC-DISEASES-Healthcare-concept.jpg" 
+                     alt="Chronic Disease Management System">
+                <div class="p-6">
+                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                    PyTorch | BERT | D3.js
+                  </h2>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+                    Chronic Disease Management System
+                  </h1>
+                  <p class="leading-relaxed mb-3">
+                    Develop an open-source visualization dashboard for tracking diabetes risk factors based on open health datasets.
+                  </p>
+                  <a href="chronic.html" class="inline-flex items-center text-[#5046E5] hover:underline">
+                    Learn More
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" 
+                         fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Card 7: Genomic Data Analysis Platform -->
+            <div class="p-4 md:w-1/3">
+              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <img class="lg:h-48 md:h-36 w-full object-cover object-center" 
+                     src="https://d2jx2rerrg6sh3.cloudfront.net/image-handler/picture/DNA%20-%20vitstudio%20_thumb.jpg" 
+                     alt="Genomic Data Analysis Platform">
+                <div class="p-6">
+                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                    R | Python | Scikit-Learn | D3.js
+                  </h2>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+                    Genomic Data Analysis Platform
+                  </h1>
+                  <p class="leading-relaxed mb-3">
+                    Develop an open-source tool to visualize genomic sequences and mutations using D3.js.
+                  </p>
+                  <a href="genomic.html" class="inline-flex items-center text-[#5046E5] hover:underline">
+                    Learn More
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" 
+                         fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Card 8: AI-Assisted Radiology Diagnostics -->
+            <div class="p-4 md:w-1/3">
+              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <img class="lg:h-48 md:h-36 w-full object-cover object-center" 
+                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-CMB3BGVFT4wt_C4sjowB8A9_2gXQON265Q&s" 
+                     alt="AI-Assisted Radiology Diagnostics">
+                <div class="p-6">
+                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                    PyTorch | OpenCV | Flask
+                  </h2>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+                    AI-Assisted Radiology Diagnostics
+                  </h1>
+                  <p class="leading-relaxed mb-3">
+                    Develop an open-source chest X-ray anomaly detection model for pneumonia classification.
+                  </p>
+                  <a href="radiology.html" class="inline-flex items-center text-[#5046E5] hover:underline">
+                    Learn More
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" 
+                         fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Card 9: 3D Medical Imaging Reconstruction for Surgical Planning -->
+            <div class="p-4 md:w-1/3">
+              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <img class="lg:h-48 md:h-36 w-full object-cover object-center" 
+                     src="https://media.springernature.com/lw1200/springer-static/image/art%3A10.1186%2Fs42492-023-00142-7/MediaObjects/42492_2023_142_Fig3_HTML.png" 
+                     alt="3D Medical Imaging Reconstruction">
+                <div class="p-6">
+                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                    TensorFlow | OpenCV | VTK
+                  </h2>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+                    3D Medical Imaging Reconstruction for Surgical Planning
+                  </h1>
+                  <p class="leading-relaxed mb-3">
+                    Develop an open-source module that converts 2D MRI slices into 3D reconstructions using deep learning techniques.
+                  </p>
+                  <a href="3dmedical.html" class="inline-flex items-center text-[#5046E5] hover:underline">
+                    Learn More
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" 
+                         fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End additional cards -->
           </div>
         </div>
-      </div>
-      <!-- Card 2: Disease Outbreak Prediction -->
-      <div class="p-4 md:w-1/3">
-        <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-          <img class="lg:h-48 md:h-36 w-full object-cover object-center" 
-               src="https://plus.unsplash.com/premium_photo-1682310231531-148748e7684f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z2xvYmFsJTIwaGVhbHRofGVufDB8fDB8fHww" 
-               alt="Disease Outbreak Prediction">
-          <div class="p-6">
-            <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-              PyTorch | BERT | Tableau
-            </h2>
-            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
-              Disease Outbreak Prediction
-            </h1>
-            <p class="leading-relaxed mb-3">
-              Predict epidemics in real-time via social media & health data analysis.
-            </p>
-            <a href="aidiagnosis.html" class="inline-flex items-center text-[#5046E5] hover:underline">
-              Learn More
-              <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" 
-                   fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="M12 5l7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- Card 3: Neurowellness AI -->
-      <div class="p-4 md:w-1/3">
-        <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-          <img class="lg:h-48 md:h-36 w-full object-cover object-center" 
-               src="https://images.unsplash.com/photo-1617791160536-598cf32026fb?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnJhaW4lMjBoZWFsdGh8ZW58MHx8MHx8fDA%3D" 
-               alt="Neurowellness AI">
-          <div class="p-6">
-            <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-              PyTorch | BERT | Tableau
-            </h2>
-            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
-              Neurowellness AI
-            </h1>
-            <p class="leading-relaxed mb-3">
-              AI-powered diagnostics for mental & physical health, along with AI powered Psychatrist.
-            </p>
-            <a href="neuro.html" class="inline-flex items-center text-[#5046E5] hover:underline">
-              Learn More
-              <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" 
-                   fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="M12 5l7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
   </div>
-</section>
-
-
-</div>
-</div>
 </body>
 </html>
